@@ -1,17 +1,18 @@
 function Player(props) {
     console.log(props)
 
-   let hobbies;
+    let hobbies;
 
     if (props.hobbies.length != 0) {
     hobbies = props.hobbies.map(hobby => <li>{hobby}</li>)  
     } else {
-        hobbies = <li>None Listed</li>
+        hobbies = <p>None Listed</p>
     }
 
     return (
         <div>
-            <h3>Player Name:{props.firstName} {props.lastName}, Jersey Number: {props.jerseyNumber}</h3>
+           
+            <h3 key={props.count}>Player Name:{props.firstName} {props.lastName}, Jersey Number: {props.jerseyNumber}</h3>
             <ul>
                 {hobbies}
             </ul>
